@@ -3,7 +3,7 @@ size_t binary_tree_height(const binary_tree_t *tree);
 /**
  * binary_tree_is_perfect - Entry point
  * @tree: constant binary_tree_t
- * Return: 0 or 1
+ * Return: 0 or 1 or l * r
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {

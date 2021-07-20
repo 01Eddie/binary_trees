@@ -2,10 +2,9 @@
 
 /**
  * binary_tree_is_full - Entry point
- * tree: const binary_tree_t pointer
+ * @tree: const binary_tree_t pointer
  * Return: Always 0 (Success)
  */
- 
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 	if (!tree)
