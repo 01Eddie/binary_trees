@@ -3,12 +3,12 @@
 
 /**
  * binary_trees_ancestor - Test ancestor function and print informations
- *
  * @first: First node
  * @second: Second node
  * Return: NULL or binary_trees_ancestor(up_fi, up_se)
  */
-BT *binary_trees_ancestor(const BT *first, const BT *second)
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+									 const binary_tree_t *second)
 {
 	binary_tree_t *up_fi, *up_se;
 
