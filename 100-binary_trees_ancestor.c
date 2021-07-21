@@ -8,7 +8,7 @@
  * @second: Second node
  * Return: NULL or binary_trees_ancestor(up_fi, up_se)
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+BT *binary_trees_ancestor(const BT *first, const BT *second)
 {
 	binary_tree_t *up_fi, *up_se;
 
@@ -23,7 +23,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tr
 
 	if (first == up_se || !up_fi || (!up_fi->parent && up_se))
 		return (binary_trees_ancestor(first, up_se));
-	else if (second == up_fi || !up_se || (!up_fi->parent && up_se))
+	else if (second == up_fi || !up_se || (!up_fi->parent && up_fi))
 		return (binary_trees_ancestor(second, up_fi));
 
 	return (binary_trees_ancestor(up_fi, up_se));
