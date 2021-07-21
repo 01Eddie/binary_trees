@@ -6,25 +6,25 @@
  *
  * @first: First node
  * @second: Second node
- * Return: NULL
+ * Return: NULL or binary_trees_ancestor(up_fi, up_se)
  */
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
+BT *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second)
 {
 	binary_tree_t *up_fi, *up_se;
 
-	if (!first || !second) // (!parent)
+	if (!first || !second)
 		return (NULL);
 
-	if (first == second) //(parent == first || parent == second)
-		return ((binary_tree_t*)first);// (parent);
+	if (first == second)
+		return ((binary_tree_t *)first);
 
 	up_fi = first->parent;
 	up_se = second->parent;
 
-	if (first==up_se || !up_fi || (!up_fi->parent && up_se)) // (left && right)
-		return (binary_trees_ancestor(first, up_se));//return (parent);
-	else if (second==up_fi || !up_se || (!up_fi->parent && up_se)) //if (!left && !right)
-		return (binary_trees_ancestor(second, up_fi)); // return (NULL);
+	if (first == up_se || !up_fi || (!up_fi->parent && up_se))
+		return (binary_trees_ancestor(first, up_se));
+	else if (second == up_fi || !up_se || (!up_fi->parent && up_se))
+		return (binary_trees_ancestor(second, up_fi));
 
-	return (binary_trees_ancestor(up_fi, up_se)); //return (left != NULL ? left : right);
+	return (binary_trees_ancestor(up_fi, up_se));
 }
