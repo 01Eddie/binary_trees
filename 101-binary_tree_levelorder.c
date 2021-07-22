@@ -25,8 +25,9 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 /**
  * binary_tree_currentlevel - Prints a number
- * @tree: Number to be printed
+ * @branch: Number to be printed
  * @level: Int
+ * @func: void
  * Return: Void
  */
 void binary_tree_currentlevel(const binary_tree_t *branch, size_t level,
